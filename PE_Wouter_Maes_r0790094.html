@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="nl">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="Wouter Maes">
+        <title>PE opdracht</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link href="CSS/defaultcss.css" rel="stylesheet">    
+    </head>
+
+    <body>
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+            <a class="navbar-brand" href="#">Anorac services</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+                aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </nav>
+        <main role="main" class="container">
+            <div class="row">
+                <div class="col">
+                    <h1>Registreer</h1>
+                    <p>Meld je aan bij Anoroc Services,
+                        wij beschermen jou software tegen malware!
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="voornaam">Voornaam</label>
+                                    <input type="text" class="form-control" placeholder="Uw voornaam" aria-label="Uw voornaam" name="voornaam">
+                                    
+                                </div>
+                                
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="naam">naam</label>
+                                    <input type="text" class="form-control" placeholder="Uw naam" aria-label="Uw naam" name="naam">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="username">Gebruikersnaam</label>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="basic-addon1">@</span>
+    
+                                    </div>
+    
+                                    <input type="text" class="form-control" placeholder="u911236" aria-label="u911236"
+                                        aria-describedby="basic-addon1" name="username">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail">Email address</label>
+                                    <input type="email" class="form-control" placeholder="mail@example.com" aria-label="mail@example.com" name="email" id="email"
+                                        aria-describedby="emailHelp">
+                                    
+                                </div>
+                            </div>
+                        </div>
+    
+    
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="exampleInputPassword">Wachtwoord</label>
+                                    <input type="password" class="form-control" name="password">
+                                    <small id="passwordHelp" class="form-text text-muted">Je wachtwoord moet minstens 8 tekens lang zijn</small>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="exampleInputPassword">Herhaal Wachtwoord</label>
+                                    <input type="password" class="form-control" name="HerhaalPassword">
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="exampleFormControlSelect1">Adres</label>
+                                    <input type="text" class="form-control" placeholder="Uw adres en huisnummer" aria-label="Uw adres en huisnummer" name="adres">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label for="exampleFormControlSelect1">Land</label>
+                                <select class="form-control" name="land">
+                                    <option>België</option>
+                                    <option>Duitsland</option>
+                                    <option>Frankrijk</option>
+                                    <option>Italië</option>
+                                    <option>Nederland</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="exampleFormControlSelect1">Provincie</label>
+                                <select class="form-control" name="provincie">
+                                    <option>Antwerpen</option>
+                                    <option>Oost-Vlanderen</option>
+                                    <option>West-Vlaanderen</option>
+                                    <option>Limburg</option>
+                                    <option>Vlaams-Brabant</option>
+                                    <option>Waal-Brabant</option>
+                                    <option>Namen</option>
+                                    <option>Luxemburg</option>
+                                    <option>Henegouwen</option>
+                                    <option>Luik</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="voornaam">postcode</label>
+                                    <input type="number" class="form-control" name="postcode">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="form-group form-check">
+                                    <input type="checkbox" class="form-check-input" name="algemenevoorwarden">
+                                    <label class="form-check-label" for="exampleCheck1">Ik ga akkoord met de algemene
+                                        voorwaarden</label>
+                                    </br>
+                                    <input type="checkbox" class="form-check-input" name="check2">
+                                    <label class="form-check-label" for="exampleCheck2">Ik wens op de hoogte te blijven van
+                                        alle nieuwe voderingen. </label>
+                                    </br>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group form-check" name="paymentRB">
+                                    <input type="radio" class="form-check-input" name="overschrijving">
+                                    <label class="form-check-label" for="overschrijving">Overschrijving</label>
+                                    </br>
+                                    <input type="radio" class="form-check-input" name="bankingApp">
+                                    <label class="form-check-label" for="bankingApp">Banking app</label>
+                                    </br>
+    
+                                    <input type="radio" class="form-check-input" name="paypal">
+                                    <label class="form-check-label" for="radiocheck3">Paypal</label>
+                                    </br>
+                                    <input type="radio" class="form-check-input" name="visaCard">
+                                    <label class="form-check-label" for="radiocheck3">Visa card</label>
+                                    </br>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group"><button type="button" class="btn btn-block btn-primary"
+                                onclick= validatieForm()>Wave your magic wand</button>
+                        </div>
+    
+    
+                        <div class="col-md-6"></div>
+                </div>
+                </form>
+            </div>
+            <div class="col-md-4">
+                <div class="alert alert-success" role="alert" id="success">
+                    <h4 class="alert-heading">Goed gedaan!</h4>
+                    <p>Aww yeah, je werd geregistreerd</p>
+                    <hr>
+                    <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.
+                    </p>
+                </div>
+                <div class="alert alert-danger" role="alert" id="danger">
+                    <h4 class="alert-heading">Yikes, errors!</h4>
+                    <ul id="error">
+                        <li>
+    
+                        </li>
+                    </ul>
+                    <hr>
+                </div>
+                <div class="alert alert-primary" role="alert" id="primary">
+                    <h4 class="alert-heading">Betalingswijze!</h4>
+                    <p id="primaryPay"></p>
+                    <hr>
+                    <p></p>
+                </div>
+            </div>
+            </div>
+        </main
