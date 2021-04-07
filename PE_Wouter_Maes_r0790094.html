@@ -36,7 +36,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="voornaam">Voornaam</label>
-                                    <input type="text" class="form-control" placeholder="Uw voornaam" aria-label="Uw voornaam" name="voornaam">
+                                    <input type="text" class="form-control" placeholder="Uw voornaam" aria-label="Uw voornaam" name="voornaam" id="voornaam">
                                     
                                 </div>
                                 
@@ -44,7 +44,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="naam">naam</label>
-                                    <input type="text" class="form-control" placeholder="Uw naam" aria-label="Uw naam" name="naam">
+                                    <input type="text" class="form-control" placeholder="Uw naam" aria-label="Uw naam" name="naam" id="naam">
                                 </div>
                             </div>
                         </div>
@@ -58,7 +58,7 @@
                                     </div>
     
                                     <input type="text" class="form-control" placeholder="u911236" aria-label="u911236"
-                                        aria-describedby="basic-addon1" name="username">
+                                        aria-describedby="basic-addon1" name="username" id="username">
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -76,14 +76,14 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="exampleInputPassword">Wachtwoord</label>
-                                    <input type="password" class="form-control" name="password">
+                                    <input type="password" class="form-control" name="password" id="password">
                                     <small id="passwordHelp" class="form-text text-muted">Je wachtwoord moet minstens 8 tekens lang zijn</small>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="exampleInputPassword">Herhaal Wachtwoord</label>
-                                    <input type="password" class="form-control" name="HerhaalPassword">
+                                    <input type="password" class="form-control" name="herhaalPassword" id="herhaalPassword">
                                 </div>
                             </div>
                         </div>
@@ -92,14 +92,15 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="exampleFormControlSelect1">Adres</label>
-                                    <input type="text" class="form-control" placeholder="Uw adres en huisnummer" aria-label="Uw adres en huisnummer" name="adres">
+                                    <input type="text" class="form-control" placeholder="Uw adres en huisnummer" aria-label="Uw adres en huisnummer" name="adres" id="adres">
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-4">
                                 <label for="exampleFormControlSelect1">Land</label>
-                                <select class="form-control" name="land">
+                                <select class="form-control"  name="land" id="land">
+                                    <option value="placeholder">Kies een Land</option>
                                     <option>België</option>
                                     <option>Duitsland</option>
                                     <option>Frankrijk</option>
@@ -109,7 +110,8 @@
                             </div>
                             <div class="col-md-4">
                                 <label for="exampleFormControlSelect1">Provincie</label>
-                                <select class="form-control" name="provincie">
+                                <select class="form-control"  name="provincie" id="provincie">
+                                    <option value="placeholder">Kies een provincie</option>
                                     <option>Antwerpen</option>
                                     <option>Oost-Vlanderen</option>
                                     <option>West-Vlaanderen</option>
@@ -124,21 +126,19 @@
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label for="voornaam">postcode</label>
-                                    <input type="number" class="form-control" name="postcode">
+                                    <label for="postcode">postcode</label>
+                                    <input type="number" class="form-control" name="postcode" id="postcode">
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-8">
                                 <div class="form-group form-check">
-                                    <input type="checkbox" class="form-check-input" name="algemenevoorwarden">
-                                    <label class="form-check-label" for="exampleCheck1">Ik ga akkoord met de algemene
-                                        voorwaarden</label>
+                                    <input type="checkbox" class="form-check-input" id="nieuwsbrief">
+                                    <label class="form-check-label" for="nieuwsbrief">Inschrijven voor onze nieuwsbrief</label>
                                     </br>
-                                    <input type="checkbox" class="form-check-input" name="check2">
-                                    <label class="form-check-label" for="exampleCheck2">Ik wens op de hoogte te blijven van
-                                        alle nieuwe voderingen. </label>
+                                    <input type="checkbox" class="form-check-input" id="voorwaarden">
+                                    <label class="form-check-label" for="voorwaarden">Ik ga akkoord emt de algemene voorwaarden</label>
                                     </br>
                                 </div>
                             </div>
@@ -161,7 +161,7 @@
                             </div>
                         </div>
                         <div class="form-group"><button type="button" class="btn btn-block btn-primary"
-                                onclick= validatieForm()>Wave your magic wand</button>
+                                onclick= Valideer()>Wave your magic wand</button>
                         </div>
     
     
@@ -194,4 +194,116 @@
                 </div>
             </div>
             </div>
-        </main
+        </main>
+        <script>
+            var ErrorArray=[];
+
+            function ControleerVoornaam(){
+                var vn = document.getElementById("voornaam").value;
+                ControleerLeeg(vn, "Het veld voornaam is vereist.");
+            }
+            function ControleerNaam(){
+                var n = document.getElementById("naam").value;
+                ControleerLeeg(n, "Het veld naam is vereist.");
+
+            }
+            function ControleerUsername(){
+                var un = document.getElementById("username").value;
+                ControleerLeeg(un, "Het veld gebruikersnaam is vereist.");
+
+            }
+            function ControleerEmail(){
+                var ma = document.getElementById("email").value;
+                if (ma.length == 0) {
+                    ErrorArray.push("Het veld email is vereist.");
+                } else if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(ma) == false) {
+                    ErrorArray.push("Emailadres is niet correct.");
+                }
+            }
+            function ControleerPassword(){
+                var pw = document.getElementById("password").value;
+                ControleerLeeg(pw, "Het veld wachtwoord is vereist.");
+                if (pw.length <= 7) {
+                    ErrorArray.push("Uw gekozen wachtwoord is te kort.")
+                }
+            }
+            function ControleerHerhaalPassword(){
+                var hpw = document.getElementById("herhaalPassword").value;
+                ControleerLeeg(hpw, "Het veld herhaal wachtwoord is vereist.");
+                if (hpw != document.getElementById("password").value) {
+                    ErrorArray.push("Je wachtwoorden komen niet overeen.");
+                }
+            }
+            function ControleerAdres(){
+                var a = document.getElementById("adres").value;
+                ControleerLeeg(a, "Adres is vereist.");
+            }
+            function ControleerLand(){
+                if (document.getElementById("land").value=="placeholder") {
+                    ErrorArray("Land is vereist.")
+                }
+            }
+            function ControleerPostcode(){
+                var pc = document.getElementById("postcode").value;
+                ControleerLeeg(pc, "Het veld postcode is vereist");
+                if (pc <1000 || pc >9999) {
+                    ErrorArray.push()
+                }
+            }
+            function ControleerProvincie(){
+                if (document.getElementById("provincie").value=="placeholder") {
+                    ErrorArray.push("Provincie is vereist.");
+                }
+            }
+            function ControleerLeeg(text, message){
+                if (text.length ==0) {
+                    ErrorArray.push(message);
+                }
+            }
+            function ControleerVoorwaarden(){
+                if (document.getElementById("voorwaarden").checked == false) {
+                    ErrorArray.push("Algemene voorwaarden is verplicht om aan te vinken.");
+                }
+            }
+            function ControleerBetaling(){
+                
+            }
+            function Valideer(){
+
+                ControleerAdres();
+                ControleerBetaling();
+                ControleerEmail();
+                ControleerHerhaalPassword();
+                ControleerLand();
+                ControleerNaam();
+                ControleerPassword();
+                ControleerPostcode();
+                ControleerProvincie();
+                ControleerUsername();
+                ControleerVoornaam();
+
+                document.getElementById("error").innerHTML = ErrorArray.join("</br>");
+               
+                if (ErrorArray.length>0) {
+                    document.getElementById("danger").style.display = "block";
+                    document.getElementById("success").style.display = "none";
+                    document.getElementById("primary").style.display = "none";
+                } else {
+                    document.getElementById("danger").style.display = "none";
+                    document.getElementById("success").style.display = "block";
+                    document.getElementById("primary").style.display = "block";
+                }
+               ErrorArray=[]; 
+            }
+        </script>
+            <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+    </body>
+</html>    
